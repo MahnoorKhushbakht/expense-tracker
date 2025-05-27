@@ -1,6 +1,4 @@
 'use client'
-import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
 import { addData } from '@/store/dataSlice'
 import { useRouter } from 'next/navigation'
 import React, { useState } from 'react'

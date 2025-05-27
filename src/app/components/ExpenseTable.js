@@ -1,48 +1,41 @@
 "use client";
+
 import React, { useEffect } from "react";
 import TableSkeleton from "./TableSkeleton";
 import Alert from "@mui/material/Alert";
-import { useSelector } from "react-redux";
-import { getData,addAmount, addExpense, addIncome } from "@/store/dataSlice";
-import { useDispatch } from "react-redux";
-import { onAuthStateChanged } from "firebase/auth";
-import { getAuth } from "firebase/auth";
+import { useSelector, useDispatch } from "react-redux";
+import { getData, addAmount, addExpense, addIncome } from "@/store/dataSlice";
+import { onAuthStateChanged, getAuth } from "firebase/auth";
 
 function ExpenseTable() {
   const authStatus = useSelector((state) => state.auth.status);
   const loading = useSelector((state) => state.expenses.loading);
   const data = useSelector((state) => state.expenses.expensesData);
-  const totalAmount = useSelector((state) => state.expenses.totalAmount)
-
-
-  // console.log("data", data);
-  // console.log("totalAmount", totalAmount);
-
+  const totalAmount = useSelector((state) => state.expenses.totalAmount);
 
   const dispatch = useDispatch();
-  const auth = getAuth();
 
-useEffect(() => {
-  const unsubscribe = onAuthStateChanged(auth, (user) => {
-    if (user) {
-      dispatch(getData()); // only get data here
+  // Fetch data when user is authenticated
+  useEffect(() => {
+    const auth = getAuth();
+
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        dispatch(getData());
+      }
+    });
+
+    return () => unsubscribe();
+  }, [dispatch]);
+
+  // Calculate amounts after data changes
+  useEffect(() => {
+    if (data && data.length > 0) {
+      dispatch(addAmount(data));
+      dispatch(addExpense(data));
+      dispatch(addIncome(data));
     }
-  });
-
-  return () => unsubscribe();
-}, [dispatch]);
-
-// After data is updated, then update totals
-useEffect(() => {
-  if (data.length > 0) {
-    dispatch(addAmount(data));
-    dispatch(addExpense(data));
-    dispatch(addIncome(data));
-  }
-}, [data, dispatch]);
-
-
-
+  }, [data, dispatch]);
 
   return (
     <>

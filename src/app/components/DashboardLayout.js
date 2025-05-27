@@ -11,7 +11,7 @@ import DataChart from "./Chart";
 import Header from "./Header";
 import Footer from "./Footer";
 import useTheme from "@/context/theme";
-import { yellow,gray,white,black } from '@ant-design/colors';
+import { yellow,gray } from '@ant-design/colors';
 import {
   DesktopOutlined,
   FileOutlined,
@@ -84,7 +84,7 @@ export default function DashboardLayout({children}) {
   <h2
     style={{
       textAlign: 'center',
-      color: mode === 'dark' ? 'white' : 'black',
+      color: mode === 'dark' ? '#000000' : '#ffffff',
       margin: '16px 0',
       fontWeight: 'bold',
       fontSize: '18px',
@@ -97,7 +97,7 @@ export default function DashboardLayout({children}) {
   <Menu
     style={{
       backgroundColor: mode === 'dark' ? yellow[4] :yellow[7],
-      color: mode === 'dark' ? 'white' : 'black',
+      color: mode === 'dark' ? '#000000' : '#ffffff',
     }}
     // defaultSelectedKeys={['1']}
     mode="inline"
@@ -123,7 +123,7 @@ export default function DashboardLayout({children}) {
         type="primary"
         size="large"
         style={{
-          backgroundColor: mode === 'dark' ? 'black' : 'white',
+          backgroundColor: mode === 'dark' ? '#000000' : '#ffffff',
           color: mode === 'dark' ? yellow[1] : yellow[7],
           border: mode === 'dark'
             ? `1px solid ${yellow[5]}`
@@ -140,7 +140,7 @@ export default function DashboardLayout({children}) {
         type="primary"
         size="large"
         style={{
-          backgroundColor: mode === 'dark' ? 'black' : 'white',
+          backgroundColor: mode === 'dark' ? '#000000' : '#ffffff',
           color: mode === 'dark' ? yellow[1] : yellow[7],
           border: mode === 'dark'
             ? `1px solid ${yellow[5]}`
@@ -190,8 +190,8 @@ export default function DashboardLayout({children}) {
               minHeight: 360,
               background: colorBgContainer,
               borderRadius: borderRadiusLG,
-              color:mode === 'dark'? white : black,
-              backgroundColor:mode === 'dark'? white : gray[9]
+              color:mode === 'dark'? '#ffffff' : '#000000',
+              backgroundColor:mode === 'dark'? '#ffffff' : gray[9]
             }}
           >
            {children}
