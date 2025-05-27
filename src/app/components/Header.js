@@ -1,0 +1,69 @@
+'use client';
+
+import useTheme from "@/context/theme";
+
+
+function Header() {
+
+  const { theme, darkTheme, lightTheme } = useTheme();
+
+
+  return (
+    <header className="w-full  z-[1000] bg-white dark:bg-black shadow-md text-black dark:text-white">
+
+      <div className="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+        {/* Logo */}
+        <div className="flex items-center">
+          <span className="text-xl font-bold text-black dark:text-white">
+            Expense Tracker
+          </span>
+        </div>
+
+        {/* Right side: Theme toggle + Auth buttons */}
+        <div className="flex items-center gap-4">
+          {/* Theme Toggle */}
+          <button onClick={theme === "dark" ? lightTheme : darkTheme} className="text-xl">
+            {theme === "dark" ? (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-6 h-6 cursor-pointer"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={1.5}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"
+                />
+              </svg>
+            ) : (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-6 h-6 cursor-pointer"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={1.5}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z"
+                />
+              </svg>
+            )}
+          </button>
+
+          
+
+        </div>
+      </div>
+
+      
+    </header>
+  );
+}
+
+export default Header;
