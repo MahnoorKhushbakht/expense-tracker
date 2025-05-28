@@ -10,6 +10,7 @@ export default function CardCarousel() {
   const totalExpense = useSelector((state) => state.expenses.totalExpense);
   const totalIncome = useSelector((state) => state.expenses.totalIncome);
   const dataItems = useSelector((state) => state.expenses.expensesData);
+  const authStatus = useSelector((state)=> state.auth.status)
   const dispatch = useDispatch();
   const auth = getAuth();
 
@@ -46,7 +47,7 @@ export default function CardCarousel() {
   ];
 
   return (
-    <Carousel autoplay className="m-5 w-full max-w-md mx-auto">
+    <Carousel autoplay className="m-5 p-5 w-full max-w-md mx-auto">
       {data.map((item, index) => {
         const isSurplus = item.label.toLowerCase() === "surplus";
         const isDeficit = item.label.toLowerCase() === "deficit";
@@ -62,7 +63,9 @@ export default function CardCarousel() {
               className="cursor-pointer bg-black dark:bg-white text-white dark:text-black transform transition-transform hover:-translate-y-1 hover:shadow-lg rounded-md w-full h-40 flex flex-col justify-center items-center p-5 shadow-md"
             >
               <h3 className="font-bold text-center">{item.label}</h3>
-              <p className={`text-xl mt-2 ${valueClass}`}>{item.value}</p>
+                     <p className={`text-xl mt-2 ${valueClass}`}>
+            {authStatus ? item.value : 0}
+          </p>
             </div>
           </div>
         );

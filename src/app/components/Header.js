@@ -9,7 +9,7 @@ function Header() {
 
 
   return (
-    <header className="w-full  z-[1000] bg-white dark:bg-black shadow-md text-black dark:text-white">
+    <header className="w-full  z-[1000] bg-black dark:bg-white shadow-md text-white dark:text-black">
 
       <div className="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
         {/* Logo */}

@@ -91,8 +91,9 @@ function ExpenseTable() {
                         >
                           <Alert
                             severity="warning"
-                            className="flex justify-center items-center"
+                            className="flex flex-col justify-center items-center"
                           >
+
                             No Data Found
                           </Alert>
                         </td>

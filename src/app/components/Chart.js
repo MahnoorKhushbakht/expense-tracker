@@ -7,6 +7,7 @@ import useTheme from '@/context/theme';
 
 export default function DataChart() {
   const chartRef = useRef(null);
+  const authStatus = useSelector((state) => state.auth.status);
   const { theme: mode } = useTheme();
   const expenses = useSelector((state) => state.expenses.expensesData);
 
@@ -82,6 +83,7 @@ export default function DataChart() {
 
   return (
     <div className='w-full h-full'>
+      
       <canvas ref={chartRef} />
     </div>
   );

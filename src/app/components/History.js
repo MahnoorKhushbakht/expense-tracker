@@ -1,8 +1,13 @@
 'use client';
+
 import { useSelector } from "react-redux";
+import { Alert } from "@mui/material";
 
 export default function History() {
   const data = useSelector((state) => state.expenses.expensesData);
+  const authStatus = useSelector((state) => state.auth.status);
+
+  const isEmpty = !authStatus || !data || data.length === 0;
 
   return (
     <div className="h-full flex flex-col rounded-sm shadow-lg overflow-hidden">
@@ -15,13 +20,25 @@ export default function History() {
           </tr>
         </thead>
         <tbody className="divide-y divide-red-200 dark:divide-white/10">
-          {data && data.map((item, index) => (
-            <tr key={index} className="hover:bg-gray-50 dark:hover:bg-white/40 transition-all duration-200">
-              <td className="px-4 py-3">{item.date || 'N/A'}</td>
-              <td className="px-4 py-3">{item.amount || 'N/A'}</td>
-              <td className="px-4 py-3">{item.category || 'N/A'}</td>
+          {isEmpty ? (
+            <tr>
+              <td colSpan={3}>
+                <div className="flex items-center justify-center p-4">
+                  <Alert severity="warning" className="flex flex-col items-center w-full">
+                    <p>No Data Found</p>
+                  </Alert>
+                </div>
+              </td>
             </tr>
-          ))}
+          ) : (
+            data.map((item, index) => (
+              <tr key={index} className="hover:bg-gray-50 dark:hover:bg-white/40 transition-all duration-200">
+                <td className="px-4 py-3">{item.date || 'N/A'}</td>
+                <td className="px-4 py-3">{item.amount || 'N/A'}</td>
+                <td className="px-4 py-3">{item.category || 'N/A'}</td>
+              </tr>
+            ))
+          )}
         </tbody>
       </table>
     </div>
