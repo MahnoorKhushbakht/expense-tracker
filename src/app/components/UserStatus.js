@@ -26,10 +26,9 @@ export default function UserStatus(){
     vertical
     align="center"
     justify="center"
-    style={{
-      marginTop: 'auto',
-      paddingBottom: '20px',
-    }}
+ style={{
+    padding: '0px', // remove marginTop and paddingBottom
+  }}
   >
     {authStatus ? (
       <Button
