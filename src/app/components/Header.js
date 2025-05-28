@@ -14,7 +14,7 @@ function Header() {
       <div className="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
         {/* Logo */}
         <div className="flex items-center">
-          <span className="text-xl font-bold text-black dark:text-white">
+          <span className="text-xl font-bold dark:text-black text-white">
             Expense Tracker
           </span>
         </div>

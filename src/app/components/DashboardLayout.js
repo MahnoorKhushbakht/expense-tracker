@@ -189,7 +189,6 @@ export default function DashboardLayout({children}) {
               padding: 24,
               minHeight: 360,
               background: colorBgContainer,
-              borderRadius: borderRadiusLG,
               color:mode === 'dark'? '#ffffff' : '#000000',
               backgroundColor:mode === 'dark'? '#ffffff' : gray[9]
             }}
