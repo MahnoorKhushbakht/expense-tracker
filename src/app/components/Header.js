@@ -1,28 +1,32 @@
 'use client';
 
 import useTheme from "@/context/theme";
-
+import UserStatus from "./UserStatus";
 
 function Header() {
-
   const { theme, darkTheme, lightTheme } = useTheme();
 
-
   return (
-    <header className="w-full  z-[1000] bg-black dark:bg-white shadow-md text-white dark:text-black">
-
+    <header className="w-full z-[1000] bg-black dark:bg-white shadow-md text-white dark:text-black">
       <div className="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
         {/* Logo */}
         <div className="flex items-center">
-          <span className="text-xl font-bold dark:text-black text-white">
+          <span className="text-xl font-bold text-white dark:text-black">
             Expense Tracker
           </span>
         </div>
 
-        {/* Right side: Theme toggle + Auth buttons */}
+        {/* Right Side: UserStatus + Theme Toggle */}
         <div className="flex items-center gap-4">
-          {/* Theme Toggle */}
-          <button onClick={theme === "dark" ? lightTheme : darkTheme} className="text-xl">
+          <div className="md:hidden sm:flex">
+          <UserStatus />
+          </div>
+          {/* Theme Toggle Button */}
+          <button
+            onClick={theme === "dark" ? lightTheme : darkTheme}
+            className="text-xl"
+            aria-label="Toggle theme"
+          >
             {theme === "dark" ? (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -55,13 +59,8 @@ function Header() {
               </svg>
             )}
           </button>
-
-          
-
         </div>
       </div>
-
-      
     </header>
   );
 }

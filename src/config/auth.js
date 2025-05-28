@@ -24,8 +24,8 @@ export const signOutUser = () =>{
       });
 }
 
-export const createUserwithEmailandPassword = ({email,password}) =>{
-    createUserWithEmailAndPassword (auth,email,password)
+export const createUserwithEmailandPassword = ({name,email,password}) =>{
+    createUserWithEmailAndPassword (auth,name,email,password)
     .then((userCredential) =>{
         const user = userCredential.user;
         console.log('usercredential',userCredential)
