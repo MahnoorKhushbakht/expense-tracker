@@ -30,6 +30,12 @@ const items = [
    <PicRightOutlined />
   ),
 
+      getItem(
+    <Link href="/contact">Contact</Link>,
+    "4",
+   <PicRightOutlined />
+  ),
+
   // getItem('User', 'sub1', <UserOutlined />, [
   //   getItem('Tom', '3'),
   //   getItem('Bill', '4'),
