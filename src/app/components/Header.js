@@ -7,11 +7,11 @@ function Header() {
   const { theme, darkTheme, lightTheme } = useTheme();
 
   return (
-    <header className="w-full z-[1000] bg-black dark:bg-white shadow-md text-white dark:text-black">
+    <header className=" w-full dark:bg-black dark:text-white bg-white text-black shadow-md">
       <div className="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
         {/* Logo */}
         <div className="flex items-center">
-          <span className="text-xl font-bold text-white dark:text-black">
+          <span className="text-xl font-bold dark:text-white text-black">
             Expense Tracker
           </span>
         </div>

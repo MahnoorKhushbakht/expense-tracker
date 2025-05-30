@@ -40,7 +40,7 @@ function ExpenseTable() {
   return (
     <>
       {authStatus ? (
-        <section className="text-gray-400 body-font p-4 mb-10">
+        <section className="dark:text-white text-black body-font p-4 mb-10">
           <div className="container mx-auto w-11/12 md:w-10/12 lg:w-full">
             <div className="w-full mx-auto overflow-auto">
               {loading ? (
@@ -49,35 +49,35 @@ function ExpenseTable() {
                 <table className="table-auto w-full text-center">
                   <thead>
                     <tr>
-                      <th className="px-4 md:px-16 py-3 title-font tracking-wider font-medium text-white text-sm dark:bg-amber-200/50 bg-amber-600/50 rounded-tl rounded-bl">
+                      <th className="px-4 md:px-16 py-3 title-font tracking-wider font-medium text-white dark:text-black text-sm dark:bg-amber-400/50 bg-amber-300/50 rounded-tl rounded-bl">
                         Expense Name
                       </th>
-                      <th className="px-4 md:px-24 py-5 title-font tracking-wider font-medium text-white text-sm dark:bg-amber-200/50 bg-amber-600/50">
+                      <th className="px-4 md:px-24 py-5 title-font tracking-wider font-medium text-white dark:text-black text-sm dark:bg-amber-400/50 bg-amber-300/50">
                         Amount
                       </th>
-                      <th className="px-4 md:px-24 py-5 title-font tracking-wider font-medium text-white text-sm dark:bg-amber-200/50 bg-amber-600/50">
+                      <th className="px-4 md:px-24 py-5 title-font tracking-wider font-medium text-white dark:text-black text-sm dark:bg-amber-400/50 bg-amber-300/50">
                         Category
                       </th>
-                      <th className="px-4 md:px-24 py-5 title-font tracking-wider font-medium text-white text-sm dark:bg-amber-200/50 bg-amber-600/50">
+                      <th className="px-4 md:px-24 py-5 title-font tracking-wider font-medium text-white dark:text-black text-sm dark:bg-amber-400/50 bg-amber-300/50">
                         Date
                       </th>
-                      <th className="w-10 title-font tracking-wider font-medium text-white text-sm dark:bg-amber-200/50 bg-amber-600/50 rounded-tr rounded-br"></th>
+                      <th className="w-10 title-font tracking-wider font-medium text-white text-sm dark:bg-amber-400/50 bg-amber-300/50 rounded-tr rounded-br"></th>
                     </tr>
                   </thead>
                   <tbody>
                     {data && data.length > 0 ? (
                       data.map((item, index) => (
                         <tr key={index}>
-                          <td className="px-4 md:px-24 py-5 text-black dark:text-white">
+                          <td className="px-4 md:px-24 py-5 text-white dark:text-black">
                             {item.name}
                           </td>
-                          <td className="px-4 md:px-24 py-5 text-black dark:text-white">
+                          <td className="px-4 md:px-24 py-5 text-white dark:text-black">
                             {item.amount}
                           </td>
-                          <td className="px-4 md:px-24 py-5 text-black dark:text-white">
+                          <td className="px-4 md:px-24 py-5 text-white dark:text-black">
                             {item.category}
                           </td>
-                          <td className="px-4 md:px-24 py-5 text-lg text-amber-600/50 dark:text-amber-200/50">
+                          <td className="px-4 md:px-24 py-5 text-lg font-bold dark:text-amber-700/50 text-amber-200/50">
                             {item.date}
                           </td>
                           <td className="w-10 text-center"></td>
@@ -105,11 +105,11 @@ function ExpenseTable() {
             </div>
 
             {!loading && (
-              <div className="flex pl-4 mt-4 w-full mx-auto">
-                <span className="text-amber-600/50 dark:text-amber-200/50 uppercase font-bold inline-flex items-center md:mb-2 lg:mb-0">
+              <div className="flex pl-4 mt-4 w-full mx-auto justify-between">
+                <span className="text-amber-300/50 dark:text-amber-400/50 uppercase font-bold inline-flex items-center md:mb-2 lg:mb-0">
                   Total Expense
                 </span>
-                <button className="flex ml-auto text-white bg-amber-600/50 border-0 py-2 px-6 focus:outline-none hover:bg-amber-200 rounded">
+                <button className="flex ml-auto font-bold p-5 text-black dark:text-white hover:bg-amber-600/50 border-0 py-2 px-6 focus:outline-none bg-amber-400/50 dark:bg-amber-600/50  dark:hover:bg-amber-400/50 rounded">
                   {totalAmount}
                 </button>
               </div>

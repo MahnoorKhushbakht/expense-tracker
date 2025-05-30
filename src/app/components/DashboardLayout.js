@@ -5,7 +5,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import useTheme from "@/context/theme";
 import { yellow, gray } from "@ant-design/colors";
-import { PieChartOutlined, HomeOutlined } from "@ant-design/icons";
+import { PieChartOutlined, HomeOutlined,PicRightOutlined } from "@ant-design/icons";
 import { Layout, Menu, theme as antdTheme } from "antd";
 import UserStatus from "./UserStatus";
 const { Content, Sider } = Layout;
@@ -23,6 +23,11 @@ const items = [
     <Link href="/expense-tracker">Calculate Expense</Link>,
     "2",
     <PieChartOutlined />
+  ),
+    getItem(
+    <Link href="/about">About</Link>,
+    "3",
+   <PicRightOutlined />
   ),
 
   // getItem('User', 'sub1', <UserOutlined />, [

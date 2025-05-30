@@ -1,9 +1,5 @@
 'use client';
-
-import { useState, useEffect } from 'react';
-import { ThemeProvider } from '@/context/theme';
 import { useSelector } from 'react-redux';
-
 import Header from './components/Header';
 import Footer from './components/Footer';
 import CardCarousel from './components/CardCarousel';
@@ -15,31 +11,6 @@ import DashboardLayout from './components/DashboardLayout';
 
 export default function Home() {
   const authStatus = useSelector((state) => state.auth.status);
-  const [theme, setTheme] = useState('dark');
-
-  const lightTheme = () => {
-    localStorage.theme = 'light';
-    setTheme('light');
-    document.documentElement.classList.add('light');
-    document.documentElement.classList.remove('dark');
-  };
-
-  const darkTheme = () => {
-    localStorage.theme = 'dark';
-    setTheme('dark');
-    document.documentElement.classList.add('dark');
-    document.documentElement.classList.remove('light');
-  };
-
-  useEffect(() => {
-    document.documentElement.classList.toggle(
-      'dark',
-      localStorage.theme === 'dark' ||
-        (!('theme' in localStorage) &&
-          window.matchMedia('(prefers-color-scheme: dark)').matches)
-    );
-  }, []);
-
   const LoginReminder = () => (
     <div className="flex flex-col items-center justify-center h-full max-w-full mx-auto bg-white rounded-2xl dark:bg-black p-6">
       <svg
@@ -63,7 +34,6 @@ export default function Home() {
   );
 
   return (
-    <ThemeProvider value={{ theme, lightTheme, darkTheme }}>
       <main>
         {/* Desktop / Tablet View */}
         <div className="hidden md:block max-w-full h-svh">
@@ -124,6 +94,5 @@ export default function Home() {
           <Footer />
         </div>
       </main>
-    </ThemeProvider>
   );
 }

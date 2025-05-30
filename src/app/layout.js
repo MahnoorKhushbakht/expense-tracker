@@ -3,6 +3,7 @@ import "./globals.css";
 import 'antd/dist/reset.css'; // Recommended for Ant Design v5+
 import Header from "./components/Header";
 import ReduxProvider from "@/store/provider";
+import Theme from "./components/Theme";
 
 
 const geistSans = Geist({
@@ -14,6 +15,7 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
 
 export const metadata = {
   title: "Expense Tracker",
@@ -30,9 +32,11 @@ export default function RootLayout({ children }) {
           {/* <Header/> */}
         </header>
         <main>
+        <Theme>
         <ReduxProvider>
         {children}
         </ReduxProvider>
+        </Theme>
         </main>
         <footer>
           
