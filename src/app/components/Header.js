@@ -2,6 +2,7 @@
 
 import useTheme from "@/context/theme";
 import UserStatus from "./UserStatus";
+import DrawerBtn from "./Drawer";
 
 function Header() {
   const { theme, darkTheme, lightTheme } = useTheme();
@@ -10,7 +11,10 @@ function Header() {
     <header className=" w-full dark:bg-black dark:text-white bg-white text-black shadow-md">
       <div className="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
         {/* Logo */}
-        <div className="flex items-center">
+        <div className="flex items-center justify-center gap-2">
+          <div className="md:hidden lg:hidden sm:flex">
+          <DrawerBtn/>
+          </div>
           <span className="text-xl font-bold dark:text-white text-black">
             Expense Tracker
           </span>
