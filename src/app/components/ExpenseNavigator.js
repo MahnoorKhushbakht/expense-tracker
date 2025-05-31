@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 const ExpenseNavigator = () => {
   return (
-    <div className="dark:bg-white/50 mt-5 mb-5 bg-black/50 w-full flex flex-col items-center justify-center p-5 rounded-md shadow-lg">
+    <div className="bg-white/50 mt-5 mb-5 dark:bg-black/50 w-full flex flex-col items-center justify-center p-5 rounded-md shadow-lg">
       <h1 className="text-2xl font-semibold dark:text-white text-black text-center">
         Calculate your Expense
       </h1>

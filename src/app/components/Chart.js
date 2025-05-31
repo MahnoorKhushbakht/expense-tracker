@@ -82,7 +82,7 @@ export default function DataChart() {
   }, [expenses, mode]);
 
   return (
-    <div className='w-full h-full'>
+    <div className='w-full h-full mt-5 mb-5'>
       
       <canvas ref={chartRef} />
     </div>

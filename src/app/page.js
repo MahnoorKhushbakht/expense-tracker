@@ -72,19 +72,19 @@ export default function Home() {
         </div>
 
         {/* Mobile View */}
-        <div className="block md:hidden dark:bg-black dark:text-white bg-white text-black space-y-6 max-w-full h-full">
+        <div className="block md:hidden dark:bg-white dark:text-black bg-black text-white space-y-6 max-w-full h-full">
           <Header />
           <div className="text-left mt-2 mx-5">
             <h1 className="text-2xl font-semibold">Dashboard Overview</h1>
-            <p className="text-sm text-gray-600 dark:text-gray-300">
+            <p className="text-sm text-white/70 dark:text-black/70">
               Monitor your recent activity and stats.
             </p>
           </div>
 
           <div className="mx-5">
             <CardCarousel />
-            <h2 className="text-2xl font-semibold mb-2 text-black dark:text-white">Data Overview</h2>
-            <p className="text-sm text-gray-600 dark:text-gray-300">
+            <h2 className="text-2xl font-semibold mb-2 text-white dark:text-black">Data Overview</h2>
+            <p className="text-sm text-white/70 dark:text-black/70">
               View the history of your transactions and financial trends over time.
             </p>
             <History />
