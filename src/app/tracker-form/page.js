@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation'
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import DashboardLayout from '../components/DashboardLayout';
+import {DatabaseOutlined} from "@ant-design/icon"
 
 function TrackerForm() {
   const router = useRouter()
@@ -112,19 +113,21 @@ function TrackerForm() {
         Submit
        </button>
     </form>) : (
-        <div className="flex flex-col items-center justify-center h-svh max-w-full  mx-auto bg-white rounded-2xl dark:bg-black ">
-        <h1 className="text-3xl font-semibold text-center text-amber-600 dark:text-amber-200">
-          Sign in to add expenses
-        </h1>
-        <p className="mt-4 text-center text-sm text-black/50 dark:text-white/50">
-          Please log in to continue tracking your finances.
-        </p>
-      </div>
+<div className="flex flex-col items-center justify-center max-w-full h-full bg-black rounded-2xl shadow-lg dark:bg-white">
+
+  <h1 className="text-2xl font-bold text-center text-amber-600 dark:text-amber-200">
+    Sign in to Add Expenses
+  </h1>
+  <p className="mt-3 text-center text-sm text-white dark:text-black">
+    Please log in to continue tracking your finances.
+  </p>
+</div>
+
       
     )}
     </DashboardLayout>
   )
-
+ 6
 }
 
 export default TrackerForm

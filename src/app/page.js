@@ -72,7 +72,7 @@ export default function Home() {
         </div>
 
         {/* Mobile View */}
-        <div className="block md:hidden dark:bg-white dark:text-black bg-black text-white space-y-6 max-w-full h-full">
+        <div className="block md:hidden dark:bg-white dark:text-black bg-black text-white max-w-full h-svh">
           <Header />
           <div className="text-left mt-2 mx-5">
             <h1 className="text-2xl font-semibold">Dashboard Overview</h1>
@@ -88,7 +88,9 @@ export default function Home() {
               View the history of your transactions and financial trends over time.
             </p>
             <History />
+            <div className='mt-5'>
             {authStatus ? <DataChart /> : <LoginReminder />}
+            </div>
             <ExpenseNavigator />
           </div>
           <Footer />

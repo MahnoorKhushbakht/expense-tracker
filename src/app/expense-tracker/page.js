@@ -7,19 +7,20 @@ import DashboardLayout from "../components/DashboardLayout";
 
 export default function Expensetracker() {
   return (
-      <div className="flex flex-col max-w-full h-svh flex-grow overflow-auto">
+      <div className="flex flex-col w-full h-screen ">
         {/* Mobile View */}
-        <div className="md:hidden lg:hidden sm:flex ">
-          <Header />
-          <div className="flex mt-5 justify-center">
-            <TagLine />
-          </div>
-          <TrackerForm />
-          <div className="w-full flex justify-center">
-            <ExpenseTable />
-          </div>
-          <Footer />
-        </div>
+<div className="flex flex-col md:hidden lg:hidden sm:flex">
+  <Header />
+  <div className="flex mt-5 justify-center">
+    <TagLine />
+  </div>
+  <TrackerForm />
+  <div className="w-full flex justify-center">
+    <ExpenseTable />
+  </div>
+  <Footer />
+</div>
+
 
         {/* Desktop View */}
         <div className="hidden md:flex lg:flex sm:hidden">

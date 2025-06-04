@@ -18,7 +18,7 @@ function SignUpForm() {
   if (showSignIn) return <SignInForm />;
 
   return (
-    <div className="sm:p-10  mx-auto h-full flex flex-col items-center justify-center p-8 m-4 w-full max-w-md rounded-lg bg-white dark:bg-black shadow-lg text-black dark:text-white">
+    <div className="sm:p-10  mx-auto h-full flex flex-col items-center justify-center p-8 m-4 w-full max-w-md rounded-lg  text-black dark:text-white">
       <h1 className="text-3xl font-semibold mb-6 text-center">Sign Up</h1>
 
       <Formik

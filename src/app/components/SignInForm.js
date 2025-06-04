@@ -99,7 +99,7 @@ function SignInForm() {
 
       {open && (
         <div className="flex justify-center items-center fixed inset-0 z-50 backdrop-blur-lg">
-          <div className="relative bg-white dark:bg-black text-black dark:text-white rounded-lg shadow-lg p-6 w-full max-w-md">
+          <div className="relative text-black dark:text-white rounded-lg p-6 w-full max-w-md">
             <button
               onClick={() => setOpen(false)}
               className="absolute top-3 right-3 text-black dark:text-white"
