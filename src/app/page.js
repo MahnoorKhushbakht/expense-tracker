@@ -72,7 +72,7 @@ export default function Home() {
         </div>
 
         {/* Mobile View */}
-        <div className="block md:hidden dark:bg-white dark:text-black bg-black text-white max-w-full h-svh">
+        <div className=" md:hidden dark:bg-white dark:text-black bg-black text-white max-w-full h-full">
           <Header />
           <div className="text-left mt-2 mx-5">
             <h1 className="text-2xl font-semibold">Dashboard Overview</h1>
