@@ -88,7 +88,7 @@ export default function Home() {
               View the history of your transactions and financial trends over time.
             </p>
             <History />
-            <div className='mt-5'>
+            <div className='m-5'>
             {authStatus ? <DataChart /> : <LoginReminder />}
             </div>
             <ExpenseNavigator />

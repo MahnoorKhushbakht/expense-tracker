@@ -113,15 +113,18 @@ function TrackerForm() {
         Submit
        </button>
     </form>) : (
-<div className="flex flex-col items-center justify-center max-w-full h-full bg-black rounded-2xl shadow-lg dark:bg-white">
+        <div className="flex flex-col items-center justify-center h-svh max-w-full ">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-12 sm:size-24 mb-2 text-amber-500 dark:text-amber-300 animate-pulse">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 2.994v2.25m10.5-2.25v2.25m-14.252 13.5V7.491a2.25 2.25 0 0 1 2.25-2.25h13.5a2.25 2.25 0 0 1 2.25 2.25v11.251m-18 0a2.25 2.25 0 0 0 2.25 2.25h13.5a2.25 2.25 0 0 0 2.25-2.25m-18 0v-7.5a2.25 2.25 0 0 1 2.25-2.25h13.5a2.25 2.25 0 0 1 2.25 2.25v7.5m-6.75-6h2.25m-9 2.25h4.5m.002-2.25h.005v.006H12v-.006Zm-.001 4.5h.006v.006h-.006v-.005Zm-2.25.001h.005v.006H9.75v-.006Zm-2.25 0h.005v.005h-.006v-.005Zm6.75-2.247h.005v.005h-.005v-.005Zm0 2.247h.006v.006h-.006v-.006Zm2.25-2.248h.006V15H16.5v-.005Z" />
+</svg>
 
-  <h1 className="text-2xl font-bold text-center text-amber-600 dark:text-amber-200">
-    Sign in to Add Expenses
-  </h1>
-  <p className="mt-3 text-center text-sm text-white dark:text-black">
-    Please log in to continue tracking your finances.
-  </p>
-</div>
+          <h1 className="text-3xl font-semibold text-center text-amber-400 dark:text-amber-300">
+            Sign in to add expenses
+          </h1>
+          <p className="mt-4 text-center text-sm text-white/60 dark:text-black/60">
+            Please log in to continue tracking your finances.
+          </p>
+        </div>
 
       
     )}
