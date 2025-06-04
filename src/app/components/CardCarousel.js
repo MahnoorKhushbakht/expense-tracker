@@ -60,7 +60,7 @@ export default function CardCarousel() {
         return (
           <div key={index} className="flex justify-center">
             <div
-              className="cursor-pointer dark:bg-black dark:text-white bg-white text-black transform transition-transform hover:-translate-y-1 hover:shadow-lg rounded-md w-full h-40 flex flex-col justify-center items-center p-5 shadow-md"
+              className="cursor-pointer dark:bg-yellow-300 dark:text-black bg-yellow-400/50 text-white transform transition-transform hover:-translate-y-1 hover:shadow-lg rounded-md w-full h-40 flex flex-col justify-center items-center p-5 shadow-md"
             >
               <h3 className="font-bold text-center">{item.label}</h3>
                      <p className={`text-xl mt-2 ${valueClass}`}>

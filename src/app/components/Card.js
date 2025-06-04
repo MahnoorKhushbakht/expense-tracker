@@ -55,7 +55,7 @@ function Card() {
         return (
           <div
             key={index}
-            className="dark:bg-black dark:text-white bg-white text-black cursor-pointer transform transition-all hover:-translate-y-0.5 shadow-sm hover:shadow-lg rounded-md w-40 h-40 flex flex-col justify-center items-center p-5"
+            className="dark:bg-yellow-300 dark:text-black bg-yellow-400/50 text-white cursor-pointer transform transition-all hover:-translate-y-0.5 shadow-sm hover:shadow-lg rounded-md w-40 h-40 flex flex-col justify-center items-center p-5"
           >
             <h3 className="font-bold text-center">{item.label}</h3>
            <p className={`text-xl mt-2 ${valueClass}`}>
