@@ -4,7 +4,6 @@ import { useRouter } from 'next/navigation'
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import DashboardLayout from '../components/DashboardLayout';
-import {DatabaseOutlined} from "@ant-design/icon"
 
 function TrackerForm() {
   const router = useRouter()
