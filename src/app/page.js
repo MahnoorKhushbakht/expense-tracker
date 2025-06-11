@@ -1,5 +1,6 @@
 'use client';
 import { useSelector } from 'react-redux';
+import React, { useEffect, useRef } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import CardCarousel from './components/CardCarousel';
@@ -11,6 +12,9 @@ import DashboardLayout from './components/DashboardLayout';
 
 export default function Home() {
   const authStatus = useSelector((state) => state.auth.status);
+  // const authUser = useSelector((state) => state.auth.user);
+
+  // console.log('ks',authUser)
   const LoginReminder = () => (
     <div className="flex flex-col items-center justify-center h-full max-w-full mx-auto bg-white rounded-2xl dark:bg-black p-6">
       <svg

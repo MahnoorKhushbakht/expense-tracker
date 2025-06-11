@@ -1,11 +1,13 @@
 'use client'
-import { signInUserwithEmailandPassword } from '@/config/auth'
+import { signInUserwithEmailandPassword, signInwithGoogle } from '@/config/auth'
 import React, { useState } from 'react'
 import SignUpForm from './SignUpForm'
 import { useDispatch } from 'react-redux'
 import { loginUser } from '@/store/authSlice'
 import Alert from '@mui/material/Alert'
 import { useRouter } from 'next/navigation'
+import { GoogleCircleFilled,FacebookFilled,TwitterCircleFilled } from '@ant-design/icons';
+import { signInwithFacebook, signInwithTwitter } from '../../config/auth'
 
 function SignInForm() {
  const router = useRouter()
@@ -32,6 +34,50 @@ function SignInForm() {
 
   const handleCloseAlert = () => {
     setAlert(null)
+  }
+
+  const handleGoogleClick = async () =>{
+    try{
+    const user = await signInwithGoogle()
+    console.log('1',user.email)
+    console.log('2',user.uid)
+    if (user) {
+        dispatch(loginUser({ email: user.email, uid: user.uid }))
+      }
+      router.push('/')
+    } catch (error) {
+      setAlert({ type: 'error', message: `Failed Login attempt, ${error.message}` })
+    }
+  }
+
+  
+  const handleFacebookClick = async () =>{
+    try{
+    const user = await signInwithFacebook()
+    console.log('1',user.email)
+    console.log('2',user.uid)
+    if (user) {
+        dispatch(loginUser({ email: user.email, uid: user.uid }))
+      }
+      router.push('/')
+    } catch (error) {
+      setAlert({ type: 'error', message: `Failed Login attempt, ${error.message}` })
+    }
+  }
+
+  
+  const handleTwitterClick = async () =>{
+    try{
+    const user = await signInwithTwitter()
+    console.log('1',user.email)
+    console.log('2',user.uid)
+    if (user) {
+        dispatch(loginUser({ email: user.email, uid: user.uid }))
+      }
+      router.push('/')
+    } catch (error) {
+      setAlert({ type: 'error', message: `Failed Login attempt, ${error.message}` })
+    }
   }
 
   const handleSubmit = async (e) => {
@@ -86,6 +132,17 @@ function SignInForm() {
           Log In
         </button>
       </form>
+<div className='flex flex-row items-center justify-between p-3 gap-2'>
+  <button onClick={() => handleGoogleClick()}>
+    <GoogleCircleFilled className="sm:text-2xl text-xl cursor-pointer hover:shadow-md" />
+  </button> 
+  <button onClick={() => handleFacebookClick()}>
+    <FacebookFilled className="sm:text-2xl text-xl cursor-pointer hover:shadow-md" />
+  </button> 
+  <button onClick={() => handleTwitterClick()}>
+    <TwitterCircleFilled className="sm:text-2xl text-xl cursor-pointer hover:shadow-md" />
+  </button>    
+</div>
 
       <p className="mt-6 text-center text-black/70 dark:text-white/70">
         Don’t have an account?{' '}

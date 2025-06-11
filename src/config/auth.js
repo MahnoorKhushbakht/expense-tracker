@@ -1,7 +1,52 @@
-import { getAuth, signInWithEmailAndPassword,createUserWithEmailAndPassword ,signOut,onAuthStateChanged  } from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword,createUserWithEmailAndPassword,TwitterAuthProvider ,FacebookAuthProvider  ,signOut,onAuthStateChanged,signInWithPopup, GoogleAuthProvider  } from "firebase/auth";
 import {app} from './firebaseConfig';
 
 const auth = getAuth(app)
+
+const googleProvider = new GoogleAuthProvider();
+const facebookProvider = new FacebookAuthProvider();
+const twitterProvider = new TwitterAuthProvider();
+
+export const signInwithFacebook = async () => {
+
+  try{
+    const result = await signInWithPopup(auth, facebookProvider)
+    const credential = FacebookAuthProvider.credentialFromResult(result);
+    const user = result.user;
+    console.log('user',user)
+    return user
+  }catch(error){
+    throw new error
+  };
+  }
+
+export const signInwithTwitter = async () => {
+
+  try{
+    const result = await signInWithPopup(auth, twitterProvider)
+    const credential = TwitterAuthProvider.credentialFromResult(result);
+    const user = result.user;
+    console.log('user',user)
+    return user
+  }catch(error){
+    throw new error
+  };
+  }
+
+export const signInwithGoogle = async () => {
+
+  try{
+    const result = await signInWithPopup(auth, googleProvider)
+    const credential = GoogleAuthProvider.credentialFromResult(result);
+    const user = result.user;
+    console.log('user',user)
+    return user
+  }catch(error){
+    throw new error
+  };
+  }
+
+
 
 export const signInUserwithEmailandPassword = async ({ email, password }) => {
     try {
@@ -13,8 +58,8 @@ export const signInUserwithEmailandPassword = async ({ email, password }) => {
   };
   
 
-export const signOutUser = () =>{
-    signOut(auth).then(() => {
+export const signOutUser = async () =>{
+    await signOut(auth).then(() => {
         // Sign-out successful.
         console.log('Sign Out')
       }).catch((error) => {
