@@ -39,8 +39,6 @@ function SignInForm() {
   const handleGoogleClick = async () =>{
     try{
     const user = await signInwithGoogle()
-    console.log('1',user.email)
-    console.log('2',user.uid)
     if (user) {
         dispatch(loginUser({ email: user.email, uid: user.uid }))
       }
@@ -51,34 +49,32 @@ function SignInForm() {
   }
 
   
-  const handleFacebookClick = async () =>{
-    try{
-    const user = await signInwithFacebook()
-    console.log('1',user.email)
-    console.log('2',user.uid)
-    if (user) {
-        dispatch(loginUser({ email: user.email, uid: user.uid }))
-      }
-      router.push('/')
-    } catch (error) {
-      setAlert({ type: 'error', message: `Failed Login attempt, ${error.message}` })
-    }
-  }
+  // const handleFacebookClick = async () =>{
+  //   try{
+  //   const user = await signInwithFacebook()
+  //      console.log('user fb',user)
+  //   if (user) {
+  //       dispatch(loginUser({ email: user.email, uid: user.uid }))
+  //     }
+  //     router.push('/')
+  //   } catch (error) {
+  //     setAlert({ type: 'error', message: `Failed Login attempt, ${error.message}` })
+  //   }
+  // }
 
   
-  const handleTwitterClick = async () =>{
-    try{
-    const user = await signInwithTwitter()
-    console.log('1',user.email)
-    console.log('2',user.uid)
-    if (user) {
-        dispatch(loginUser({ email: user.email, uid: user.uid }))
-      }
-      router.push('/')
-    } catch (error) {
-      setAlert({ type: 'error', message: `Failed Login attempt, ${error.message}` })
-    }
-  }
+  // const handleTwitterClick = async () =>{
+  //   try{
+  //   const user = await signInwithTwitter()
+  //   console.log('user twitter',user)
+  //   if (user) {
+  //       dispatch(loginUser({ email: user.email, uid: user.uid }))
+  //     }
+  //     router.push('/')
+  //   } catch (error) {
+  //     setAlert({ type: 'error', message: `Failed Login attempt, ${error.message}` })
+  //   }
+  // }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -132,16 +128,18 @@ function SignInForm() {
           Log In
         </button>
       </form>
-<div className='flex flex-row items-center justify-between p-3 gap-2'>
-  <button onClick={() => handleGoogleClick()}>
-    <GoogleCircleFilled className="sm:text-2xl text-xl cursor-pointer hover:shadow-md" />
+<div className='pt-3 pb-3'>
+  <button className='w-full bg-amber-600/50 dark:bg-amber-200/50 p-2 rounded-sm' onClick={() => handleGoogleClick()}>
+    {/* <GoogleCircleFilled className="sm:text-2xl text-xl cursor-pointer hover:shadow-md" />
+     */}
+Sign-in with Google
   </button> 
-  <button onClick={() => handleFacebookClick()}>
+  {/* <button onClick={() => handleFacebookClick()}>
     <FacebookFilled className="sm:text-2xl text-xl cursor-pointer hover:shadow-md" />
   </button> 
   <button onClick={() => handleTwitterClick()}>
     <TwitterCircleFilled className="sm:text-2xl text-xl cursor-pointer hover:shadow-md" />
-  </button>    
+  </button>     */}
 </div>
 
       <p className="mt-6 text-center text-black/70 dark:text-white/70">

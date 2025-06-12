@@ -16,7 +16,7 @@ export const signInwithFacebook = async () => {
     console.log('user',user)
     return user
   }catch(error){
-    throw new error
+  return error.message
   };
   }
 
@@ -29,7 +29,7 @@ export const signInwithTwitter = async () => {
     console.log('user',user)
     return user
   }catch(error){
-    throw new error
+    return error.message
   };
   }
 
@@ -42,7 +42,7 @@ export const signInwithGoogle = async () => {
     console.log('user',user)
     return user
   }catch(error){
-    throw new error
+  return error.message
   };
   }
 
