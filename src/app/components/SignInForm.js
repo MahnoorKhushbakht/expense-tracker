@@ -36,17 +36,21 @@ function SignInForm() {
     setAlert(null)
   }
 
-  const handleGoogleClick = async () =>{
-    try{
-    const user = await signInwithGoogle()
+const handleGoogleClick = async () => {
+  try {
+    const user = await signInwithGoogle();
+
     if (user) {
-        dispatch(loginUser({ email: user.email, uid: user.uid }))
-      }
-      router.push('/')
-    } catch (error) {
-      setAlert({ type: 'error', message: `Failed Login attempt, ${error.message}` })
+      dispatch(loginUser({ email: user.email, uid: user.uid }));
+      router.push('/');
+    } else {
+      setAlert({ type: 'error', message: 'Login was unsuccessful. Please try again.' });
     }
+  } catch (error) {
+    setAlert({ type: 'error', message: `Failed Login attempt, ${error.message}` });
   }
+};
+
 
   
   // const handleFacebookClick = async () =>{
