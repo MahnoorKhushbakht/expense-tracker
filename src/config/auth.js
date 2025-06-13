@@ -1,4 +1,4 @@
-import { getAuth, signInWithEmailAndPassword,createUserWithEmailAndPassword,TwitterAuthProvider ,FacebookAuthProvider  ,signOut,onAuthStateChanged,signInWithPopup, GoogleAuthProvider  } from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword,signInWithRedirect,createUserWithEmailAndPassword,TwitterAuthProvider ,FacebookAuthProvider  ,signOut,onAuthStateChanged,signInWithPopup, GoogleAuthProvider  } from "firebase/auth";
 import {app} from './firebaseConfig';
 
 const auth = getAuth(app)
@@ -36,7 +36,7 @@ export const signInwithTwitter = async () => {
 export const signInwithGoogle = async () => {
 
   try{
-    const result = await signInWithPopup(auth, googleProvider)
+    const result = await signInWithRedirect(auth, googleProvider)
     const credential = GoogleAuthProvider.credentialFromResult(result);
     const user = result.user;
     console.log('user',user)
