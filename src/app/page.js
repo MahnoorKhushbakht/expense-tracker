@@ -1,4 +1,5 @@
 'use client';
+import {motion} from 'motion/react'
 import { useSelector } from 'react-redux';
 import React, { useEffect, useRef } from 'react';
 import Header from './components/Header';
@@ -41,8 +42,16 @@ export default function Home() {
       <main>
         {/* Desktop / Tablet View */}
         <div className="hidden md:block max-w-full h-svh">
+ 
           <DashboardLayout>
-            <div className="text-left mb-6">
+             <motion.div 
+        initial={{opacity:0,scale: 0.5 }} 
+        animate={{opacity:1, scale: 1 }} 
+        transition={{ duration: 0.8, ease: "easeInOut",type:"spring" }}
+        className="hidden md:block max-w-full h-svh">
+
+            <div  
+             className="text-left mb-6">
               <h1 className="text-white dark:text-black text-2xl font-semibold">
                 Dashboard Overview
               </h1>
@@ -72,12 +81,19 @@ export default function Home() {
                 </div>
               </div>
             </div>
+          </motion.div>
           </DashboardLayout>
+
         </div>
 
         {/* Mobile View */}
         <div className=" md:hidden dark:bg-white dark:text-black bg-black text-white max-w-full h-full">
+          
           <Header />
+                     <motion.div 
+        initial={{opacity:0,scale: 0.5 }} 
+        animate={{opacity:1, scale: 1 }} 
+        transition={{ duration: 0.8, ease: "easeInOut",type:"spring" }}>
           <div className="text-left mt-2 mx-5">
             <h1 className="text-2xl font-semibold">Dashboard Overview</h1>
             <p className="text-sm text-white/70 dark:text-black/70">
@@ -97,6 +113,7 @@ export default function Home() {
             </div>
             <ExpenseNavigator />
           </div>
+          </motion.div>
           <Footer />
         </div>
       </main>

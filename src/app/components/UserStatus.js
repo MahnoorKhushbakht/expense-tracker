@@ -6,6 +6,8 @@ import { Button, Flex,theme as antdTheme} from 'antd';
 import { yellow } from "@ant-design/colors";
 import React, { useState } from "react";
 import useTheme from "@/context/theme";
+import {motion} from 'motion/react'
+import { AnimatePresence } from 'motion/react';
 
 export default function UserStatus(){
   const [open, setOpen] = useState(false);
@@ -68,7 +70,12 @@ export default function UserStatus(){
   </Flex>
 
   {open && (
-    <div className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-sm">
+    <AnimatePresence>
+    <motion.div 
+    initial={{ opacity: 0, scale: 0 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0 }}
+    className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-sm">
       <div className="relative bg-white dark:bg-black text-black dark:text-white p-6 rounded-lg shadow-xl">
         <button
           onClick={() => setOpen(false)}
@@ -87,7 +94,8 @@ export default function UserStatus(){
         </button>
         <SignInForm />
       </div>
-    </div>
+    </motion.div>
+    </AnimatePresence>
   )}
   </>
     )

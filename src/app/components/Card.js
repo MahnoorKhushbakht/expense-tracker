@@ -1,4 +1,5 @@
 "use client";
+import {motion} from 'motion/react'
 import { useSelector, useDispatch } from "react-redux";
 import React, { useEffect } from "react";
 import { getData, addAmount, addExpense, addIncome } from "@/store/dataSlice";
@@ -53,7 +54,13 @@ function Card() {
           : "";
 
         return (
-          <div
+          <motion.div
+            whileHover= {
+              {
+                type: "spring",
+                scale: 0.9
+              }
+            }
             key={index}
             className="dark:bg-yellow-300 dark:text-black bg-yellow-400/50 text-white cursor-pointer transform transition-all hover:-translate-y-0.5 shadow-sm hover:shadow-lg rounded-md w-40 h-40 flex flex-col justify-center items-center p-5"
           >
@@ -62,7 +69,7 @@ function Card() {
   {authStatus ? item.value : 0}
 </p>
 
-          </div>
+          </motion.div>
         );
       })}
     </div>

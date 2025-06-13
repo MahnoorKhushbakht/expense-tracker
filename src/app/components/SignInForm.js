@@ -1,6 +1,8 @@
 'use client'
 import { signInUserwithEmailandPassword, signInwithGoogle } from '@/config/auth'
 import React, { useState } from 'react'
+import {motion} from 'motion/react'
+import { AnimatePresence } from 'motion/react';
 import SignUpForm from './SignUpForm'
 import { useDispatch } from 'react-redux'
 import { loginUser } from '@/store/authSlice'
@@ -53,32 +55,32 @@ const handleGoogleClick = async () => {
 
 
   
-  // const handleFacebookClick = async () =>{
-  //   try{
-  //   const user = await signInwithFacebook()
-  //      console.log('user fb',user)
-  //   if (user) {
-  //       dispatch(loginUser({ email: user.email, uid: user.uid }))
-  //     }
-  //     router.push('/')
-  //   } catch (error) {
-  //     setAlert({ type: 'error', message: `Failed Login attempt, ${error.message}` })
-  //   }
-  // }
+  const handleFacebookClick = async () =>{
+    try{
+    const user = await signInwithFacebook()
+       console.log('user fb',user)
+    if (user) {
+        dispatch(loginUser({ email: user.email, uid: user.uid }))
+      }
+      router.push('/')
+    } catch (error) {
+      setAlert({ type: 'error', message: `Failed Login attempt, ${error.message}` })
+    }
+  }
 
   
-  // const handleTwitterClick = async () =>{
-  //   try{
-  //   const user = await signInwithTwitter()
-  //   console.log('user twitter',user)
-  //   if (user) {
-  //       dispatch(loginUser({ email: user.email, uid: user.uid }))
-  //     }
-  //     router.push('/')
-  //   } catch (error) {
-  //     setAlert({ type: 'error', message: `Failed Login attempt, ${error.message}` })
-  //   }
-  // }
+  const handleTwitterClick = async () =>{
+    try{
+    const user = await signInwithTwitter()
+    console.log('user twitter',user)
+    if (user) {
+        dispatch(loginUser({ email: user.email, uid: user.uid }))
+      }
+      router.push('/')
+    } catch (error) {
+      setAlert({ type: 'error', message: `Failed Login attempt, ${error.message}` })
+    }
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -138,7 +140,7 @@ const handleGoogleClick = async () => {
      */}
 Sign-in with Google
   </button> 
-  {/* <button onClick={() => handleFacebookClick()}>
+ {/* <button onClick={() => handleFacebookClick()}>
     <FacebookFilled className="sm:text-2xl text-xl cursor-pointer hover:shadow-md" />
   </button> 
   <button onClick={() => handleTwitterClick()}>
@@ -157,8 +159,12 @@ Sign-in with Google
       </p>
 
       {open && (
-        <div className="flex justify-center items-center fixed inset-0 z-50 backdrop-blur-lg">
-          <div className="relative text-black dark:text-white rounded-lg p-6 w-full max-w-md">
+        <AnimatePresence>
+         <motion.div 
+    initial={{ opacity: 0, scale: 0 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0 }}  className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-sm">
+          <div className="relative bg-white dark:bg-black text-black dark:text-white p-6 rounded-lg shadow-xl">
             <button
               onClick={() => setOpen(false)}
               className="absolute top-3 right-3 text-black dark:text-white"
@@ -176,7 +182,8 @@ Sign-in with Google
             </button>
             <SignUpForm />
           </div>
-        </div>
+        </motion.div>
+        </AnimatePresence>
       )}
     </div>
   )
