@@ -33,23 +33,36 @@ export default function UserStatus(){
   }}
   >
     {authStatus ? (
-      <Button
-        onClick={handleSignOut}
-        type="primary"
-        size="large"
-        style={{
-          backgroundColor: mode === 'dark' ? '#000000' : '#ffffff',
-          color: mode === 'dark' ? yellow[1] : yellow[7],
-          border: mode === 'dark'
-            ? `1px solid ${yellow[5]}`
-            : `1px solid ${yellow[7]}`,
-          borderRadius: borderRadiusLG,
-          width: '80%',
-        }}
-      >
-        LogOut
-      </Button>
+           <div className="w-full flex justify-center">
+  <motion.div
+    className="w-full"
+    initial={{ opacity: 1, scale: 1 }}
+    whileHover={{ opacity: 1.1, scale: 1.02 }}
+  >
+    <Button
+      onClick={handleSignOut}
+      type="primary"
+      size="large"
+      style={{
+        backgroundColor: mode === 'dark' ? '#000000' : '#ffffff',
+        color: mode === 'dark' ? yellow[1] : yellow[7],
+        border: mode === 'dark'
+          ? `1px solid ${yellow[5]}`
+          : `1px solid ${yellow[7]}`,
+        borderRadius: borderRadiusLG,
+        width: '100%',
+      }}
+    >
+      LogOut
+    </Button>
+  </motion.div>
+</div>
+
     ) : (
+      <motion.div
+      initial={{ opacity: 1, scale:1 }}
+      whileHover={{ opacity:1.1, scale:1.1,boxShadow:10}}
+      >
       <Button
         onClick={() => setOpen(true)}
         type="primary"
@@ -61,11 +74,12 @@ export default function UserStatus(){
             ? `1px solid ${yellow[5]}`
             : `1px solid ${yellow[7]}`,
           borderRadius: borderRadiusLG,
-          width: '80%',
+          width: '100%',
         }}
       >
         LogIn
       </Button>
+      </motion.div>
     )}
   </Flex>
 
@@ -77,7 +91,13 @@ export default function UserStatus(){
                         exit={{ opacity: 0, scale: 0 }}
     className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-sm">
       <div className="relative bg-white dark:bg-black text-black dark:text-white p-6 rounded-lg shadow-xl">
-        <button
+        <motion.button
+                    whileHover= {
+                      {
+                        type: "spring",
+                        scale: 1.001
+                      }
+                    }
           onClick={() => setOpen(false)}
           className="absolute top-2 right-2 text-black dark:text-white"
         >
@@ -91,7 +111,7 @@ export default function UserStatus(){
           >
             <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
           </svg>
-        </button>
+        </motion.button>
         <SignInForm />
       </div>
     </motion.div>

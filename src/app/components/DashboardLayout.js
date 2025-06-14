@@ -92,7 +92,7 @@ export default function DashboardLayout({ children }) {
         />
 
         <div style={{ flexGrow: 1 }} />
-        <UserStatus/>
+        {/* <UserStatus/> */}
       </Sider>
 
       <Layout>

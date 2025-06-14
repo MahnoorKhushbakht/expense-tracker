@@ -22,7 +22,7 @@ function Header() {
 
         {/* Right Side: UserStatus + Theme Toggle */}
         <div className="flex items-center justify-center gap-4">
-
+        <UserStatus/>
           {/* Theme Toggle Button */}
           <button
             onClick={theme === "dark" ? lightTheme : darkTheme}

@@ -1,5 +1,6 @@
 'use client';
 import { useState } from "react";
+import {motion} from 'motion/react'
 
 export default function ContactPage() {
   const apiUrl = process.env.NEXT_PUBLIC_API_URL_Contact;
@@ -58,7 +59,15 @@ export default function ContactPage() {
   };
 
   return (
-    <section className="relative w-full h-screen">
+    <motion.section 
+    initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{
+                duration: 0.8,
+                delay: 0.5,
+                ease: [0, 0.71, 0.2, 1.01],
+            }}
+    className="relative w-full h-screen">
       {/* Map Background */}
       <div className="absolute inset-0 w-full h-full">
         <iframe
@@ -156,6 +165,6 @@ export default function ContactPage() {
           </p>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
