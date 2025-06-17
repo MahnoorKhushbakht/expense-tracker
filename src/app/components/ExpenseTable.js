@@ -52,13 +52,13 @@ function ExpenseTable() {
                       <th className="px-4 md:px-16 py-3 title-font tracking-wider font-medium text-white dark:text-black text-sm dark:bg-amber-400/50 bg-amber-300/50 rounded-tl rounded-bl">
                         Expense Name
                       </th>
-                      <th className="px-4 md:px-24 py-5 title-font tracking-wider font-medium text-white dark:text-black text-sm dark:bg-amber-400/50 bg-amber-300/50">
+                      <th className="px-4 md:px-16 py-5 title-font tracking-wider font-medium text-white dark:text-black text-sm dark:bg-amber-400/50 bg-amber-300/50">
                         Amount
                       </th>
-                      <th className="px-4 md:px-24 py-5 title-font tracking-wider font-medium text-white dark:text-black text-sm dark:bg-amber-400/50 bg-amber-300/50">
+                      <th className="px-4 md:px-16 py-5 title-font tracking-wider font-medium text-white dark:text-black text-sm dark:bg-amber-400/50 bg-amber-300/50">
                         Category
                       </th>
-                      <th className="px-4 md:px-24 py-5 title-font tracking-wider font-medium text-white dark:text-black text-sm dark:bg-amber-400/50 bg-amber-300/50">
+                      <th className="px-4 md:px-16 py-5 title-font tracking-wider font-medium text-white dark:text-black text-sm dark:bg-amber-400/50 bg-amber-300/50">
                         Date
                       </th>
                       <th className="w-10 title-font tracking-wider font-medium text-white text-sm dark:bg-amber-400/50 bg-amber-300/50 rounded-tr rounded-br"></th>
