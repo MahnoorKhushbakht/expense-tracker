@@ -4,6 +4,7 @@ import ExpenseTable from "../components/ExpenseTable";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import DashboardLayout from "../components/DashboardLayout";
+import ExpenseForm from "../components/ExpenseForm";
 
 export default function Expensetracker() {
   return (
@@ -14,7 +15,8 @@ export default function Expensetracker() {
   <div className="flex justify-center">
     <TagLine />
   </div>
-  <TrackerForm />
+  {/* <TrackerForm /> */}
+  <ExpenseForm/>
   <div className="w-full flex justify-center">
     <ExpenseTable />
   </div>
@@ -28,7 +30,8 @@ export default function Expensetracker() {
             <div className="flex justify-center">
               <TagLine />
             </div>
-            <TrackerForm />
+            {/* <TrackerForm /> */}
+              <ExpenseForm/>
             <div className="w-full flex justify-center">
               <ExpenseTable />
             </div>

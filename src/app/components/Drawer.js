@@ -73,7 +73,7 @@ const { theme: mode } = useTheme();
         />
 
         <div style={{ flexGrow: 1 }} />
-        <UserStatus/>
+        {/* <UserStatus/> */}
       </Drawer>
     </>
   );

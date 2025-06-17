@@ -59,14 +59,7 @@ export default function ContactPage() {
   };
 
   return (
-    <motion.section 
-    initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{
-                duration: 0.8,
-                delay: 0.5,
-                ease: [0, 0.71, 0.2, 1.01],
-            }}
+    <section 
     className="relative w-full h-screen">
       {/* Map Background */}
       <div className="absolute inset-0 w-full h-full">
@@ -83,7 +76,15 @@ export default function ContactPage() {
       </div>
 
       {/* Contact Form */}
-      <div className="relative z-10 flex items-center justify-center h-full p-4">
+      <motion.div
+      initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{
+                duration: 0.8,
+                delay: 0.5,
+                ease: [0, 0.71, 0.2, 1.01],
+            }}
+      className="relative z-10 flex items-center justify-center h-full p-4">
         <div className="w-full max-w-md bg-black bg-opacity-90 rounded-lg p-6 shadow-lg">
           <h2 className="text-amber-100 text-xl mb-2 font-semibold">Contact Us</h2>
           <p className="text-amber-100 text-sm mb-4">
@@ -164,7 +165,7 @@ export default function ContactPage() {
             We value your input. Our team is here to support your financial goals with the Expense Tracker.
           </p>
         </div>
-      </div>
-    </motion.section>
+      </motion.div>
+    </section>
   );
 }
