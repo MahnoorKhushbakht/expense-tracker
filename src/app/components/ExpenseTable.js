@@ -46,7 +46,7 @@ function ExpenseTable() {
               {loading ? (
                 <TableSkeleton />
               ) : (
-                <table className="table-auto w-full p-4 text-center">
+                <table className="table-auto w-full p-2 text-center">
                   <thead>
                     <tr>
                       <th className="px-2 md:px-16 py-2  title-font tracking-wide font-medium text-white dark:text-black text-sm dark:bg-amber-400/50 bg-amber-300/50 rounded-tl rounded-bl">
@@ -68,16 +68,16 @@ function ExpenseTable() {
                     {data && data.length > 0 ? (
                       data.map((item, index) => (
                         <tr key={index}>
-                          <td className=" text-white dark:text-black">
+                          <td className="md:text-base text-sm px-2 py-2  text-white dark:text-black">
                             {item.name}
                           </td>
-                          <td className="text-base text-white dark:text-black">
+                          <td className="md:text-base text-sm px-2 py-2 text-white dark:text-black">
                             {item.amount}
                           </td>
-                          <td className="text-base text-white dark:text-black">
+                          <td className="md:text-base text-sm px-2 py-2 text-white dark:text-black">
                             {item.category}
                           </td>
-<td className="px-4 text-base md:px-20 py-5 font-bold dark:text-amber-700/50 text-amber-200/50">
+<td className="md:text-base text-sm px-2 py-2 font-bold dark:text-amber-700/50 text-amber-200/50">
   {new Date(item.date).toISOString().split("T")[0]}
 </td>
 
