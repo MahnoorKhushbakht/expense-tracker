@@ -10,8 +10,9 @@ export default function Expensetracker() {
   return (
       <div className="flex flex-col w-full h-screen ">
         {/* Mobile View */}
-<div className="md:hidden lg:hidden sm:flex max-w-full h-full dark:bg-black bg-white">
+<div className="md:hidden lg:hidden sm:flex max-w-full h-full ">
   <Header />
+  <div className="bg-black dark:bg-white">
   <div className="flex justify-center">
     <TagLine />
   </div>
@@ -19,6 +20,7 @@ export default function Expensetracker() {
   <ExpenseForm/>
   <div className="w-full flex justify-center">
     <ExpenseTable />
+  </div>
   </div>
   <Footer />
 </div>
