@@ -33,7 +33,10 @@ export default function History() {
           ) : (
             data.map((item, index) => (
               <tr key={index} className="text-black hover:bg-gray-50 dark:hover:bg-white/40 transition-all duration-200">
-                <td className="px-4 py-3">{item.date || 'N/A'}</td>
+<td className="px-4 py-3">
+  {item.date ? new Date(item.date).toISOString().split("T")[0] : 'N/A'}
+</td>
+
                 <td className="px-4 py-3">{item.amount || 'N/A'}</td>
                 <td className="px-4 py-3">{item.category || 'N/A'}</td>
               </tr>

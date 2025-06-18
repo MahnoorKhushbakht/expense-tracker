@@ -46,19 +46,19 @@ function ExpenseTable() {
               {loading ? (
                 <TableSkeleton />
               ) : (
-                <table className="table-auto w-full text-center">
+                <table className="table-auto w-full p-4 text-center">
                   <thead>
                     <tr>
-                      <th className="px-4 md:px-16 py-3 title-font tracking-wider font-medium text-white dark:text-black text-sm dark:bg-amber-400/50 bg-amber-300/50 rounded-tl rounded-bl">
+                      <th className="px-2 md:px-16 py-2  title-font tracking-wide font-medium text-white dark:text-black text-sm dark:bg-amber-400/50 bg-amber-300/50 rounded-tl rounded-bl">
                         Expense Name
                       </th>
-                      <th className="px-4 md:px-16 py-5 title-font tracking-wider font-medium text-white dark:text-black text-sm dark:bg-amber-400/50 bg-amber-300/50">
+                      <th className="px-2 md:px-16 py-2 title-font tracking-wide font-medium text-white dark:text-black text-sm dark:bg-amber-400/50 bg-amber-300/50">
                         Amount
                       </th>
-                      <th className="px-4 md:px-16 py-5 title-font tracking-wider font-medium text-white dark:text-black text-sm dark:bg-amber-400/50 bg-amber-300/50">
+                      <th className="px-2 md:px-16 py-2 title-font tracking-wide font-medium text-white dark:text-black text-sm dark:bg-amber-400/50 bg-amber-300/50">
                         Category
                       </th>
-                      <th className="px-4 md:px-16 py-5 title-font tracking-wider font-medium text-white dark:text-black text-sm dark:bg-amber-400/50 bg-amber-300/50">
+                      <th className="px-2 md:px-16 py-2 title-font tracking-wide font-medium text-white dark:text-black text-sm dark:bg-amber-400/50 bg-amber-300/50">
                         Date
                       </th>
                       <th className="w-10 title-font tracking-wider font-medium text-white text-sm dark:bg-amber-400/50 bg-amber-300/50 rounded-tr rounded-br"></th>
@@ -68,13 +68,13 @@ function ExpenseTable() {
                     {data && data.length > 0 ? (
                       data.map((item, index) => (
                         <tr key={index}>
-                          <td className=" px-4 md:px-20 py-5 text-white dark:text-black">
+                          <td className=" text-white dark:text-black">
                             {item.name}
                           </td>
-                          <td className="text-base text-basepx-4 md:px-20 py-5 text-white dark:text-black">
+                          <td className="text-base text-white dark:text-black">
                             {item.amount}
                           </td>
-                          <td className="text-base px-4 md:px-20 py-5 text-white dark:text-black">
+                          <td className="text-base text-white dark:text-black">
                             {item.category}
                           </td>
 <td className="px-4 text-base md:px-20 py-5 font-bold dark:text-amber-700/50 text-amber-200/50">

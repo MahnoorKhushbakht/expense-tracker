@@ -57,7 +57,7 @@ export default function ExpenseForm() {
         ...formData,
         date: formData.date?.toISOString()
       }
-      dispatch(addData({ data: formData }))
+      dispatch(addData({ data: submissionPayload }))
       alert('Data submitted successfully!')
       resetFormfield()
     }
