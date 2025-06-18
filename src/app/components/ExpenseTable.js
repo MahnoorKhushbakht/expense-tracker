@@ -68,16 +68,16 @@ function ExpenseTable() {
                     {data && data.length > 0 ? (
                       data.map((item, index) => (
                         <tr key={index}>
-                          <td className="md:text-base text-sm px-2 py-2  text-white dark:text-black">
+                          <td className="md:text-base text-sm px-1 py-1  text-white dark:text-black">
                             {item.name}
                           </td>
-                          <td className="md:text-base text-sm px-2 py-2 text-white dark:text-black">
+                          <td className="md:text-base text-sm px-1 py-1 text-white dark:text-black">
                             {item.amount}
                           </td>
-                          <td className="md:text-base text-sm px-2 py-2 text-white dark:text-black">
+                          <td className="md:text-base text-sm px-1 py-1 text-white dark:text-black">
                             {item.category}
                           </td>
-<td className="md:text-base text-sm px-2 py-2 font-bold dark:text-amber-700/50 text-amber-200/50">
+<td className="md:text-base text-sm px-1 py-1 font-bold dark:text-amber-700/50 text-amber-200/50">
   {new Date(item.date).toISOString().split("T")[0]}
 </td>
 
