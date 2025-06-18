@@ -128,7 +128,6 @@ export default function ExpenseForm() {
           </Select>
         </Form.Item>
         </div>
-          <div className='p-2'>
              <Form.Item wrapperCol={{ offset: 6, span: 16 }}>
           <motion.div
             className="w-full"
@@ -150,7 +149,6 @@ export default function ExpenseForm() {
         </Button>
         </motion.div>
       </Form.Item>
-                </div>
       </Form>
     </div>
     ) : (
