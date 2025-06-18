@@ -14,7 +14,7 @@ export default function TagLine() {
                      text-2xl sm:text-3xl md:text-4xl lg:text-5xl 
                      w-full sm:w-[400px] md:w-[500px] lg:w-[600px] 
                      h-[80px] sm:h-[100px] md:h-[130px] lg:h-[150px] 
-                     flex items-center justify-center px-4"
+                     flex items-center justify-center px-4 py-4"
         >
           <Typewriter
             options={{
