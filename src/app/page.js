@@ -41,14 +41,14 @@ export default function Home() {
   return (
       <main>
         {/* Desktop / Tablet View */}
-        <div className="hidden md:block max-w-full h-svh">
+        <div className="hidden md:block max-w-full h-full">
  
           <DashboardLayout>
              <motion.div 
         initial={{opacity:0,scale: 0.5 }} 
         animate={{opacity:1, scale: 1 }} 
         transition={{ duration: 0.8, ease: "easeInOut",type:"spring" }}
-        className="hidden md:block max-w-full h-svh">
+        className="hidden md:block max-w-full h-full">
 
             <div  
              className="text-left mb-6">

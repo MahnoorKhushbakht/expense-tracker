@@ -17,11 +17,14 @@ export default function DataChart() {
     const labels = expenses.slice(-4).map(item => item.date);
     const amount = expenses.slice(-4).map(item => parseFloat(item.amount));
     const ctx = chartRef.current.getContext('2d');
+const newLabels = labels.map(date =>
+  date ? new Date(date).toISOString().split("T")[0] : "N/A"
+);
 
     const chart = new Chart(ctx, {
       type: 'bar',
       data: {
-        labels: labels,
+        labels: newLabels,
         datasets: [{
           label: 'Expenses',
           data: amount,

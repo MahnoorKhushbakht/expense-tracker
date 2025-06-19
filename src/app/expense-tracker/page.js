@@ -8,22 +8,27 @@ import ExpenseForm from "../components/ExpenseForm";
 
 export default function Expensetracker() {
   return (
-      <div className="flex flex-col w-full h-screen ">
+      <div className="flex flex-col w-full max-h-full ">
         {/* Mobile View */}
-<div className="md:hidden lg:hidden sm:flex max-w-full h-svh ">
-  <Header />
-  <div className="bg-black dark:bg-white">
-  <div className="flex justify-center ">
-    <TagLine />
+<div className="flex flex-col w-full max-h-screen">
+  {/* Mobile View */}
+  <div className="flex flex-col sm:flex md:hidden lg:hidden">
+    <Header />
+
+    <div className="bg-black dark:bg-white flex flex-col items-center w-full px-4 py-6 gap-6">
+      <TagLine />
+
+      <ExpenseForm />
+
+      <div className="w-full flex justify-center">
+        <ExpenseTable />
+      </div>
+    </div>
+
+    <Footer />
   </div>
-  {/* <TrackerForm /> */}
-  <ExpenseForm/>
-  <div className="w-full flex justify-center">
-    <ExpenseTable />
-  </div>
-  </div>
-  <Footer />
 </div>
+
 
 
         {/* Desktop View */}
